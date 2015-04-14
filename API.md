@@ -8,6 +8,14 @@ pb.require(name)
 
 # protobuf message methods
 
+## Name()
+
+Returns message name.
+
+```lua
+msg:Name()
+```
+
 ## MergeFrom(other_msg)
 
 Merges the contents of the specified message into the current message.

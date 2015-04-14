@@ -192,6 +192,10 @@ function _M.def(parent, name, ast)
 	end
 
 	-- common methods.
+		-- Name()
+	function methods:Name()
+		return name
+	end
 		-- HasField()
 	function methods:HasField(name)
 		local data = rawget(self, '.data') -- field data.
