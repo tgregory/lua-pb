@@ -3,7 +3,8 @@
 package	= 'lua-pb'
 version	= 'scm-0'
 source	= {
-	url	= 'git://github.com/tgregory/lua-pb.git'
+	url	= 'git://github.com/tgregory/lua-pb.git',
+	branch = 'package-name',
 }
 description	= {
 	summary	= "Lua Protocol Buffers",
