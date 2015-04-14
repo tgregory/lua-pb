@@ -65,6 +65,7 @@ function _M.def(parent, name, ast)
 	-- create Metatable for Message/Group.
 	local is_group = (ast['.type'] == 'group')
 	local mt = {
+	fullname = ((parent['.fullname'] and parent['.fullname'] .. '.') or '') .. name,
 	name = name,
 	is_message = not is_group,
 	is_group = is_group,
@@ -192,6 +193,10 @@ function _M.def(parent, name, ast)
 	end
 
 	-- common methods.
+		-- FullName()
+	function methods:FullName()
+		return fullname
+	end
 		-- Name()
 	function methods:Name()
 		return name
