@@ -131,10 +131,13 @@ local function pack_varint32(num)
 		return pack_varint64_raw(num)
 	end
 	-- only use the lowest 32-bits
-	if num >= 0x100000000 then
-		num = num % 0x100000000
-	end
+	--Modification.
+	--All operations are carried out only over the variable and if it is a numeric type
+
 	if t == 'number' then
+		if num >= 0x100000000 then
+			num = num % 0x100000000
+		end		
 		return char(varint_next_byte(num))
 	end
 	return pack_varint64_cdata(num)

@@ -43,6 +43,13 @@ local fmts = {
 local function normalize_number(num)
 	local t = type(num)
 	if t ~= 'string' then
+		if t == 'boolean' then
+			if num then
+				num=1
+			else
+				num=0
+			end
+		end
 		return num, t
 	end
 	local len = #num
